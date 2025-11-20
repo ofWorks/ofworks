@@ -6,11 +6,25 @@
 ░   ░ ▒    ▓   ▓ █    █  ██
  ░░░  ▒     ▓▓▓  ████ █   █
 ```
-ofGen is a command line app, installed to your path (if you allow in installation step)
-if you need to re-run installation step you can go
+ofGen is a command line software to generate ofWorks projects.<br>
+Complete installation script already builds it and adds to path.<br>
+if you have it installed you can test calling ```ofgen``` from any folder.<br>
+if you don't have it installed you can compile and install using:
 ```
 cd $ofw/ofgen
 ./compile.sh
+```
+or if you are in Windows Powershell:
+```
+cd $ofw/ofgen
+./compile.ps1
+```
+
+
+
+installed to your path (if you allow in installation step)
+if you need to re-run installation step you can go
+```
 ```
 
 Basic usage, you go to your folder project and invoke
