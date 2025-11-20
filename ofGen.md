@@ -10,32 +10,20 @@ ofGen is a command line software to generate ofWorks projects.<br>
 Complete installation script already builds it and adds to path.<br>
 if you have it installed you can test calling ```ofgen``` from any folder.<br>
 if you don't have it installed you can compile and install using:
-```
+```bash
 cd $ofw/ofgen
-./compile.sh
-```
-or if you are in Windows Powershell:
-```
-cd $ofw/ofgen
-./compile.ps1
-```
-
-
-
-installed to your path (if you allow in installation step)
-if you need to re-run installation step you can go
-```
+./compile.sh #./compile.ps1 if you are in Windows Powershell
 ```
 
 Basic usage, you go to your folder project and invoke
-```
+```bash
 cd $ofw/apps/Work2026/transmutation
 ofgen
 ```
 without parameters it will detect your platform and install recommended templates.
 
 My favorite application is going to an openFrameworks project and run
-```
+```bash
 ofgen import
 ```
 
@@ -44,12 +32,12 @@ in this file there is a "recipe" of all settings to build the project.<br>
 The nice thing is the project can behave exactly like an addon, so you can use a "libs" folder to test some library without addon, or a variation of OpenCV with different compilation settings.
 
 One can invoke parameters like this also.
-```
+```bash
 cd $ofw/apps/workApp/awesome
 ofgen templates=zed,chalet,macos addons=ofxMidi,ofxOpencv ofpath=../../.. path=/Volumes/tool/Transcend
 ```
 but usually it is more useful to test some template quickly like
-```
+```bash
 ofgen templates=chalet,zed
 ```
 
