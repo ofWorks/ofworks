@@ -32,27 +32,27 @@ The nice thing is the project can behave exactly like an addon, so you can use a
 One can invoke parameters like this also.
 ```
 cd $ofw/apps/workApp/awesome
-ofgen templates=zed,macos,make addons=ofxMidi,ofxOpencv ofpath=../../.. path=/Volumes/tool/Transcend
+ofgen templates=zed,chalet,macos addons=ofxMidi,ofxOpencv ofpath=../../.. path=/Volumes/tool/Transcend
 ```
 but usually it is more useful to test some template quickly like
 ```
-ofgen templates=vscode,make
+ofgen templates=chalet,zed
 ```
 
 ## Templates
-Templates means any mixture of Code Editor (ZED, VSCode), Build Systems (make, chalet) or Both (XCode, Visual Studio 2022).
+Templates means any mixture of Code Editor (ZED, VSCode), Build Systems (chalet) or Both (XCode).
 if you run ```ofgen open``` it will open the first template that is a Code Editor in templates list.
 if you run ```ofgen buildrun``` it will invoke the first build system listed in templates list.
 
 if we use of.yml like this:
 ```yaml
-templates: [macos, zed, make]
+templates: [macos, zed, chalet]
 ```
 ```ofgen open ``` opens xcode, and ```ofgen buildrun``` calls xcodebuild.
 
-in this other case ```ofgen open ``` opens zed, and ```ofgen buildrun``` calls make RunRelease.
+in this other case ```ofgen open ``` opens zed, and ```ofgen buildrun``` calls ```chalet buildrun```.
 ```yaml
-templates: [zed, make, macos]
+templates: [zed, chalet, macos]
 ```
 
 ## Recipe of.yml
@@ -74,7 +74,7 @@ addons:
   - ofxVideoRecorder
 # - ofxMidi
 
-templates: [macos, zed, make]
+templates: [macos, zed, chalet]
 
 # More advanced settings
 sources:
