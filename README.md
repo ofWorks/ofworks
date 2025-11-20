@@ -38,13 +38,18 @@ ofgen buildrun
 without parameters it will detect your platform and create the recommended templates for your platform.
 Today the default ones are:
 
+## Templates
 | Platform | Templates |
 | :--- | :---: |
 | macOS | XCode, Chalet, ZED |
 | Windows | Chalet, ZED |
 | Linux | Chalet, ZED |
+| Raspberry PI / Linux Arm | Chalet, ZED |
 
 VSCode to be re-added soon.<br>
+From chalet project it is possible to export to Visual Studio, CLion, Fleet, XCode, Code::Blocks<br>
+[More Chalet info here](chalet.md)
+
 
 ## Chalet / ZED combo
 For a unified experience in all platforms you can install <a href="https://zed.dev" target="_blank">ZED editor</a><br>
@@ -60,6 +65,7 @@ Core only uses glm operations. it can be added if needed to access any of this o
 ```ofPoint, ofMatrix3x3, ofMatrix4x4, ofQuaternion, ofVec2f, ofVec3f, ofVec4f, ofVectorMath```<br>
 FreeImage was removed and now ofImage has a mango library backend (faster and more modern).<br>
 For now loading and saving of TIF, PNG and JPG is OK. Some other operations to be implemented.<br>
+
 
 ## Collaboration
 Feedback and collaboration is encouraged. Pull requests are very welcome.<br>
