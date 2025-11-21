@@ -1,7 +1,7 @@
 You can use the following script to install ofWorks fork<br>
 Run this script from the folder you want ofWorks to be installed<br>
 ```bash
-curl -fsSL https://dmtr.org/of.sh | bash
+curl -fsSL https://ofworks.cc/of.sh | bash
 ```
 ```
  o-o  o--o o       o  o-o  o--o  o  o  o-o
