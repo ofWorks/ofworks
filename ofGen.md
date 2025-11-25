@@ -1,64 +1,90 @@
-
-```
- ░░░  ▒▒▒▒  ▓▓▓  ████ █   █    Project Generator
-░   ░ ▒    ▓     █    ██  █    for ofWorks
-░   ░ ▒▒▒  ▓  ▓▓ ███  █ █ █    (OpenFrameworks fork)
-░   ░ ▒    ▓   ▓ █    █  ██
+# ░░░  ▒▒▒▒  ▓▓▓  ████ █   █    Project Generator  
+░   ░ ▒    ▓     █    ██  █    for **ofWorks**  
+░   ░ ▒▒▒  ▓  ▓▓ ███  █ █ █    (OpenFrameworks fork)  
+░   ░ ▒    ▓   ▓ █    █  ██  
  ░░░  ▒     ▓▓▓  ████ █   █
-```
-ofGen is a command line software to generate ofWorks projects.<br>
-Complete installation script already builds it and adds to path.<br>
-if you have it installed you can test calling ```ofgen``` from any folder.<br>
-if you don't have it installed you can compile and install using:
+
+---
+
+**ofGen** is a command-line tool to generate ofWorks projects.
+
+- The complete installation script already builds it and adds it to your system path.
+- If you have it installed, you can simply call `ofgen` from any folder.
+- If not installed, you can compile and install using:
+
 ```bash
-cd $ofw/ofgen
-./compile.sh #./compile.ps1 if you are in Windows Powershell
+cd ofworks/ofgen
+./compile.sh # Windows requires Git Bash or ./compile.ps1 for Powershell
 ```
 
-Basic usage, you go to your folder project and invoke
+---
+
+## 🚀 Basic Usage
+
+Navigate to your project folder and invoke:
+
 ```bash
-cd $ofw/apps/Work2026/transmutation
+cd ofworks/apps/Work2026/transmutation
 ofgen
 ```
-without parameters it will detect your platform and install recommended templates.
+*Without parameters, it detects your platform and installs the recommended templates.*
 
-My favorite application is going to an openFrameworks project and run
+A favorite workflow is to run this in any openFrameworks project:
+
 ```bash
 ofgen import
 ```
 
-this will import project data (addons list) to a file called of.yml in project folder.<br>
-in this file there is a "recipe" of all settings to build the project.<br>
-The nice thing is the project can behave exactly like an addon, so you can use a "libs" folder to test some library without addon, or a variation of OpenCV with different compilation settings.
+This imports project data (addons list) and creates a file called `of.yml` in your project folder.  
+This file is a "recipe" with all settings required to build the project.
 
-One can invoke parameters like this also.
+You can also invoke parameters directly:
+
 ```bash
-cd $ofw/apps/workApp/awesome
+cd ofworks/apps/workApps/awesomeApp
 ofgen templates=zed,chalet,macos addons=ofxMidi,ofxOpencv ofpath=../../.. path=/Volumes/tool/Transcend
 ```
-but usually it is more useful to test some template quickly like
+
+Or quickly test templates:
+
 ```bash
 ofgen templates=chalet,zed
 ```
 
-## Templates
-Templates means any mixture of Code Editor (ZED, VSCode), Build Systems (chalet) or Both (XCode).
-if you run ```ofgen open``` it will open the first template that is a Code Editor in templates list.
-if you run ```ofgen buildrun``` it will invoke the first build system listed in templates list.
+---
 
-if we use of.yml like this:
+## 🗂️ Templates
+
+Templates can mean any mix of:
+
+- Code Editors: `zed`, `VSCode`
+- Build Systems: `chalet`
+- Both: `XCode`
+
+- `ofgen open` will open the first template in your list that is a code editor.
+- `ofgen buildrun` will use the first build system listed.
+
+Example using `of.yml`:
+
 ```yaml
 templates: [macos, zed, chalet]
 ```
-```ofgen open ``` opens xcode, and ```ofgen buildrun``` calls xcodebuild.
+- `ofgen open` ➜ Xcode
+- `ofgen buildrun` ➜ xcodebuild
 
-in this other case ```ofgen open ``` opens zed, and ```ofgen buildrun``` calls ```chalet buildrun```.
+Another example:
+
 ```yaml
 templates: [zed, chalet, macos]
 ```
+- `ofgen open` ➜ zed
+- `ofgen buildrun` ➜ chalet buildrun
 
-## Recipe of.yml
-```yml
+---
+
+## 📝 of.yml Recipe Example
+
+```yaml
 # name: XPFlagship2024
 
 ofpath: ../../..
@@ -78,12 +104,12 @@ addons:
 
 templates: [macos, zed, chalet]
 
-# More advanced settings
+# Advanced settings
 sources:
   # - ../XP/src
   # - ../DEDGE-RIO/src
   - ../XP/src/additional
-  - ../Aura/src2 #only testing
+  - ../Aura/src2 # only testing
 
 defines:
   - NANOVG_GL2_IMPLEMENTATION
@@ -92,5 +118,10 @@ defines:
 frameworks: [Security, IOKit]
 ```
 
-## To be implemented soon
-- [ ] Addons with git address. so you can move a project to another computer and it will clone automatically if addon is not there. You will be able to pinpoint a tag or a branch.
+---
+
+## 🧩 Roadmap / Coming Soon
+
+- [ ] Addons with a git address: clone automatically on missing addons when moving projects between machines, with support for specific tags or branches.
+
+---
