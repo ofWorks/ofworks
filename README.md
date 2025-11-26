@@ -18,6 +18,7 @@ o   o |     \ / \ /  o   o |  \  | \      |
 This script installs everything needed (libraries, `ofGen`) to run your projects.  
 `ofGen` is a command line project generator and it will be available in your global path.
 
+> [!NOTE]  
 > **Tested working on:**  
 > macOS (Apple Silicon), Windows, Linux (Ubuntu x86_64/Pop!_OS), Raspberry PI (and Ubuntu arm in GitHub Actions)
 
