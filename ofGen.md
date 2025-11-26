@@ -1,8 +1,10 @@
-# ░░░  ▒▒▒▒  ▓▓▓  ████ █   █    Project Generator  
-░   ░ ▒    ▓     █    ██  █    for **ofWorks**  
-░   ░ ▒▒▒  ▓  ▓▓ ███  █ █ █    (OpenFrameworks fork)  
-░   ░ ▒    ▓   ▓ █    █  ██  
+```
+ ░░░  ▒▒▒▒  ▓▓▓  ████ █   █    Project Generator
+░   ░ ▒    ▓     █    ██  █    for ofWorks
+░   ░ ▒▒▒  ▓  ▓▓ ███  █ █ █    (OpenFrameworks fork)
+░   ░ ▒    ▓   ▓ █    █  ██
  ░░░  ▒     ▓▓▓  ████ █   █
+```
 
 ---
 
@@ -35,8 +37,10 @@ A favorite workflow is to run this in any openFrameworks project:
 ofgen import
 ```
 
-This imports project data (addons list) and creates a file called `of.yml` in your project folder.  
+This imports project data (addons list from `addons.make`) and creates a file called `of.yml` in your project folder.  
 This file is a "recipe" with all settings required to build the project.
+
+The nice thing is the project can behave exactly like an addon, so you can use a `libs` folder to test some library without addon, or a variation of `OpenCV` with different compilation settings.
 
 You can also invoke parameters directly:
 
@@ -45,7 +49,7 @@ cd ofworks/apps/workApps/awesomeApp
 ofgen templates=zed,chalet,macos addons=ofxMidi,ofxOpencv ofpath=../../.. path=/Volumes/tool/Transcend
 ```
 
-Or quickly test templates:
+Or usually it is more useful to quickly test templates:
 
 ```bash
 ofgen templates=chalet,zed
@@ -57,28 +61,28 @@ ofgen templates=chalet,zed
 
 Templates can mean any mix of:
 
-- Code Editors: `zed`, `VSCode`
+- Code Editors: `Zed`, `VSCode`
 - Build Systems: `chalet`
 - Both: `XCode`
 
 - `ofgen open` will open the first template in your list that is a code editor.
 - `ofgen buildrun` will use the first build system listed.
 
-Example using `of.yml`:
+Example if using `of.yml`:
 
 ```yaml
 templates: [macos, zed, chalet]
 ```
-- `ofgen open` ➜ Xcode
-- `ofgen buildrun` ➜ xcodebuild
+- `ofgen open` ➜ Opens `Xcode`
+- `ofgen buildrun` ➜ Calls `xcodebuild`
 
 Another example:
 
 ```yaml
 templates: [zed, chalet, macos]
 ```
-- `ofgen open` ➜ zed
-- `ofgen buildrun` ➜ chalet buildrun
+- `ofgen open` ➜ Opens `Zed`
+- `ofgen buildrun` ➜ Calls `chalet buildrun`
 
 ---
 
