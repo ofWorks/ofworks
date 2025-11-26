@@ -1,7 +1,5 @@
 # ofWorks Installation & Quick Start
 
----
-
 You can use the following script to install the **ofWorks** fork.  
 Run this script from the folder you want **ofWorks** to be installed:
 
@@ -18,10 +16,11 @@ o   o |     \ / \ /  o   o |  \  | \      |
 ```
 
 This script installs everything needed (libraries, `ofGen`) to run your projects.  
-`ofGen` is a command line project generator and it will be available in your path.
+`ofGen` is a command line project generator and it will be available in your global path.
 
-> **Tested working on:**  
-> macOS (Silicon), Windows, Linux (Ubuntu x86_64/Pop!_OS), Raspberry PI (and Ubuntu arm in GitHub Actions)
+> [!Note]
+> **Tested working on**:  
+> macOS (Apple Silicon), Windows, Linux (Ubuntu x86_64/Pop!_OS), Raspberry PI (and Ubuntu arm in GitHub Actions)
 
 ---
 
@@ -42,8 +41,8 @@ cd ofworks
 **Pre-requisites:**  
 [Git for Windows](https://git-scm.com/install/windows) and [Chalet Build System](https://chalet-work.space/download/).
 
-You run the install script from Git Bash.  
-After installation is complete you can use it from Powershell or Git Bash to build and run your projects.
+You run the install script from `Git Bash`.  
+After installation is complete you can use it from `Powershell` or `Git Bash` to build and run your projects.
 
 ---
 
@@ -63,8 +62,6 @@ ofgen buildrun
 [More ofGen info here](ofGen.md)
 
 Without parameters it will detect your platform and create the recommended templates for your platform. Today the default ones are:
-
----
 
 ## Templates
 
@@ -103,12 +100,12 @@ and build by pressing <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> (macO
   moved aside to an addon: `ofxURL` (libs not ready yet).
 - This reduces 4 megabytes of final binary size.
 - Legacy openFrameworks math is moved aside to an addon called `ofxMath`.
-- Core only uses `glm` operations.  
   It can be added if needed to access any of these objects:
   ```
   ofPoint, ofMatrix3x3, ofMatrix4x4, ofQuaternion, 
   ofVec2f, ofVec3f, ofVec4f, ofVectorMath
   ```
+- Core only uses `glm` operations.  
 - FreeImage was removed and now `ofImage` has a mango library backend (faster and more modern).
 - For now loading and saving of TIF, PNG and JPG is OK.  
   Some other operations to be implemented.
@@ -119,4 +116,4 @@ and build by pressing <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> (macO
 
 Feedback and collaboration is encouraged. Pull requests are very welcome.
 
-It is preferred to discuss first any feature change using issues and discussions before submitting PRs,  
+It is preferred to discuss first any feature change using issues and discussions before submitting PRs.
